@@ -15,6 +15,11 @@ class TaskController extends ActiveController
 {
     public $modelClass = Task::class;
 
+    public $serializer = [
+        'class' => \yii\rest\Serializer::class,
+        'collectionEnvelope' => 'items',
+    ];
+
     public function actions()
     {
         return array_merge(parent::actions(), [
